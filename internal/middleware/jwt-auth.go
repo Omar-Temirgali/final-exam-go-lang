@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/Omar-Temirgali/final-exam-go-lang/internal/domain/helper"
-	service "github.com/Omar-Temirgali/final-exam-go-lang/internal/services"
+	"github.com/Omar-Temirgali/final-exam-go-lang/internal/service"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
