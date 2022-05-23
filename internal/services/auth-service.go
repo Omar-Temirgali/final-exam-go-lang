@@ -1,11 +1,11 @@
 package service
 
 import (
-	"final_go_draft/domain/models"
-	"final_go_draft/dto"
-	"final_go_draft/repository"
 	"log"
 
+	"github.com/Omar-Temirgali/final-exam-go-lang/internal/domain/dto"
+	"github.com/Omar-Temirgali/final-exam-go-lang/internal/domain/models"
+	"github.com/Omar-Temirgali/final-exam-go-lang/internal/repository"
 	"github.com/mashingan/smapping"
 	"golang.org/x/crypto/bcrypt"
 )
