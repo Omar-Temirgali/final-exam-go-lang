@@ -1,4 +1,4 @@
-package model
+package models
 
 type Article struct {
 	ID      uint64 `gorm:"primary_key:auto_increment" json:"id"`
