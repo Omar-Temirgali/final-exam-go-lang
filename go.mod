@@ -30,5 +30,6 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.4 // indirect
+	github.com/mashingan/smapping v0.1.13
 	gorm.io/gorm v1.23.1 // indirect
 )
