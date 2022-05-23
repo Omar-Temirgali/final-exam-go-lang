@@ -1,8 +1,7 @@
 package repository
 
 import (
-	"final_go_draft/domain/models"
-
+	"github.com/Omar-Temirgali/final-exam-go-lang/internal/domain/models"
 	"gorm.io/gorm"
 )
 
