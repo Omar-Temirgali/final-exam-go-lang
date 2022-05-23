@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/Omar-Temirgali/final-exam-go-lang/config"
-	controller "github.com/Omar-Temirgali/final-exam-go-lang/internal/controllers"
+	"github.com/Omar-Temirgali/final-exam-go-lang/internal/controller"
 	"github.com/Omar-Temirgali/final-exam-go-lang/internal/middleware"
 	"github.com/Omar-Temirgali/final-exam-go-lang/internal/repository"
 	"github.com/Omar-Temirgali/final-exam-go-lang/internal/service"
