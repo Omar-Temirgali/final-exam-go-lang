@@ -58,7 +58,7 @@ func (c *authController) Register(ctx *gin.Context) {
 	}
 
 	if !c.authService.IsDuplicateEmail(registerDTO.Email) {
-		response := helper.BuildErrorResponse("Failed to process request", "Duplicate email", helper.EmptyObj{})
+		response := helper.BuildErrorResponse("Failed to process request", "This email is already registered", helper.EmptyObj{})
 		ctx.JSON(http.StatusConflict, response)
 	} else {
 		createdUser := c.authService.CreateUser(registerDTO)

@@ -42,14 +42,14 @@ func (c *articleController) All(context *gin.Context) {
 func (c *articleController) FindByID(context *gin.Context) {
 	id, err := strconv.ParseUint(context.Param("id"), 0, 0)
 	if err != nil {
-		res := helper.BuildErrorResponse("No param id was found", err.Error(), helper.EmptyObj{})
+		res := helper.BuildErrorResponse("No parameter id was found", err.Error(), helper.EmptyObj{})
 		context.AbortWithStatusJSON(http.StatusBadRequest, res)
 		return
 	}
 
 	var article models.Article = c.articleService.FindByID(id)
 	if (article == models.Article{}) {
-		res := helper.BuildErrorResponse("Data not found", "No data with given id", helper.EmptyObj{})
+		res := helper.BuildErrorResponse("Data not found", "No data is found with given ID", helper.EmptyObj{})
 		context.JSON(http.StatusNotFound, res)
 	} else {
 		res := helper.BuildResponse(true, "OK", article)
@@ -101,7 +101,7 @@ func (c *articleController) Update(context *gin.Context) {
 		response := helper.BuildResponse(true, "OK", result)
 		context.JSON(http.StatusOK, response)
 	} else {
-		response := helper.BuildErrorResponse("You dont have permission", "You are not the owner", helper.EmptyObj{})
+		response := helper.BuildErrorResponse("You don not have a permission to update", "You are not the owner", helper.EmptyObj{})
 		context.JSON(http.StatusForbidden, response)
 	}
 }
@@ -110,7 +110,7 @@ func (c *articleController) Delete(context *gin.Context) {
 	var article models.Article
 	id, err := strconv.ParseUint(context.Param("id"), 0, 0)
 	if err != nil {
-		response := helper.BuildErrorResponse("Failed tou get id", "No param id were found", helper.EmptyObj{})
+		response := helper.BuildErrorResponse("Failed. ID is not correct", "No paramater ID were found", helper.EmptyObj{})
 		context.JSON(http.StatusBadRequest, response)
 	}
 	article.ID = id
@@ -126,7 +126,7 @@ func (c *articleController) Delete(context *gin.Context) {
 		res := helper.BuildResponse(true, "Deleted", helper.EmptyObj{})
 		context.JSON(http.StatusOK, res)
 	} else {
-		response := helper.BuildErrorResponse("You dont have permission", "You are not the owner", helper.EmptyObj{})
+		response := helper.BuildErrorResponse("You don not have a permission to delete", "You are not the owner of the article", helper.EmptyObj{})
 		context.JSON(http.StatusForbidden, response)
 	}
 }
