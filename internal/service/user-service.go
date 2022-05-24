@@ -18,7 +18,6 @@ type userService struct {
 	userRepository repository.UserRepository
 }
 
-//NewUserService creates a new instance of UserService
 func NewUserService(userRepo repository.UserRepository) UserService {
 	return &userService{
 		userRepository: userRepo,

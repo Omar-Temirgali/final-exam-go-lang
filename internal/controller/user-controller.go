@@ -22,7 +22,6 @@ type userController struct {
 	jwtService  service.JWTService
 }
 
-//NewUserController is creating anew instance of UserControlller
 func NewUserController(userService service.UserService, jwtService service.JWTService) UserController {
 	return &userController{
 		userService: userService,

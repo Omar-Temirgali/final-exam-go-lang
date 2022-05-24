@@ -21,7 +21,6 @@ type authService struct {
 	userRepository repository.UserRepository
 }
 
-//NewAuthService creates a new instance of AuthService
 func NewAuthService(userRep repository.UserRepository) AuthService {
 	return &authService{
 		userRepository: userRep,

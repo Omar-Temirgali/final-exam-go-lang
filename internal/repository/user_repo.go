@@ -21,7 +21,6 @@ type userConnection struct {
 	connection *gorm.DB
 }
 
-//NewUserRepository is creates a new instance of UserRepository
 func NewUserRepository(db *gorm.DB) UserRepository {
 	return &userConnection{
 		connection: db,
